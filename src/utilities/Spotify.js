@@ -49,7 +49,7 @@ const getAuthAccessToken = () => {
   return access_token;
 };
 
-const search = async (item) => {
+export const search = async (item) => {
   const response = await fetch(`${baseUrl}/search?type=track&q=${item}`, {
     headers: {
       Authorization: "Bearer " + (await getAccessToken()),
@@ -68,7 +68,7 @@ const search = async (item) => {
   return [];
 };
 
-const savePlaylist = async (name, tracks) => {
+export const savePlaylist = async (name, tracks) => {
   let access_token = getAuthAccessToken();
   let userResponse = await fetch("https://api.spotify.com/v1/me", {
     headers: {
