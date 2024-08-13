@@ -17,7 +17,7 @@ function Track(props) {
         <p style={{ fontSize: 11 }}>{props.album}</p>
       </div>
       {props.plusIcon && (
-        <div className="addIconDiv" onClick={handleClick}>
+        <div className="iconDiv" onClick={handleClick}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             x="0px"

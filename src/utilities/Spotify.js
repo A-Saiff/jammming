@@ -1,27 +1,4 @@
-const urlForAccessToken = "https://accounts.spotify.com/api/token";
 const baseUrl = "https://api.spotify.com/v1";
-
-const getAccessToken = async () => {
-  let access_token = sessionStorage.getItem("access_token");
-  let expires_in = sessionStorage.getItem("expires_in");
-
-  if (!access_token || expires_in < Date.now()) {
-    let response = await fetch(urlForAccessToken, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-      body: "grant_type=client_credentials&client_id=1e7ef874eb474e4498ffff2c49f57c07&client_secret=6043db5a4b1d40a3a726423ccef912fc",
-    });
-    let data = await response.json();
-    access_token = data.access_token;
-
-    sessionStorage.setItem("access_token", access_token);
-    sessionStorage.setItem("expires_in", Date.now() + data.expires_in * 1000);
-  }
-
-  return access_token;
-};
 
 const getAuthAccessToken = () => {
   let access_token = sessionStorage.getItem("authorized_access_token");
@@ -52,7 +29,7 @@ const getAuthAccessToken = () => {
 export const search = async (item) => {
   const response = await fetch(`${baseUrl}/search?type=track&q=${item}`, {
     headers: {
-      Authorization: "Bearer " + (await getAccessToken()),
+      Authorization: "Bearer " + getAuthAccessToken(),
     },
   });
   const jsonResponse = await response.json();

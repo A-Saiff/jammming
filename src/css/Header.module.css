@@ -5,4 +5,29 @@
   text-align: center;
   border-radius: 1rem;
   padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 10px black;
+}
+
+.h1 {
+  font-size: 50px;
+  background: linear-gradient(
+    135deg,
+    #565656,
+    #b2ffa9,
+    #ff4a1c,
+    #81523f,
+    #565656,
+    #b2ffa9,
+    #ff4a1c,
+    #81523f,
+    #3f2a2b
+  );
+  background-clip: text;
+  color: transparent;
+  margin: auto;
+}
+.p {
+  width: 50%;
+  margin: 20px auto;
 }

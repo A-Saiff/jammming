@@ -1,0 +1,8 @@
+.tracklist {
+  margin: 5px 0;
+  overflow: auto;
+  flex: 1;
+}
+.tracklist::-webkit-scrollbar {
+  display: none;
+}
