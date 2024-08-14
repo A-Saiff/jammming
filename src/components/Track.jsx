@@ -13,11 +13,11 @@ function Track(props) {
 
   return (
     <div className={styles.track}>
-      <div>
+      <div className={styles.item}>
         <h4>{props.name}</h4>
         <p style={{ fontSize: 10 }}>{props.artist}</p>
       </div>
-      <div>
+      <div className={styles.item}>
         <p style={{ fontWeight: 700, fontSize: 13 }}>Album:</p>
         <p style={{ fontSize: 11 }}>{props.album}</p>
       </div>
@@ -27,7 +27,6 @@ function Track(props) {
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="40"
             height="40"
             viewBox="0 0 50 50"
           >

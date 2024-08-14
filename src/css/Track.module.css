@@ -10,6 +10,6 @@
   text-align: center;
 }
 
-.track div {
+.track .item {
   flex: 1;
 }
