@@ -5,6 +5,11 @@ function Track(props) {
   const handleClick = (e) => {
     props.addSong(props.track);
   };
+  const removeClick = (e) => {
+    props.setAdded((prev) =>
+      props.songs.filter((song) => song !== props.track)
+    );
+  };
 
   return (
     <div className={styles.track}>
@@ -16,7 +21,7 @@ function Track(props) {
         <p style={{ fontWeight: 700, fontSize: 13 }}>Album:</p>
         <p style={{ fontSize: 11 }}>{props.album}</p>
       </div>
-      {props.plusIcon && (
+      {props.plusIcon ? (
         <div className="iconDiv" onClick={handleClick}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +33,10 @@ function Track(props) {
           >
             <path d="M25,2C12.317,2,2,12.317,2,25s10.317,23,23,23s23-10.317,23-23S37.683,2,25,2z M37,26H26v11h-2V26H13v-2h11V13h2v11h11V26z"></path>
           </svg>
+        </div>
+      ) : (
+        <div className="iconDiv" onClick={removeClick}>
+          <img src="../../minus-svgrepo-com.svg" />
         </div>
       )}
     </div>

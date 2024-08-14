@@ -20,7 +20,11 @@ function Container() {
   return (
     <div className={styles.container}>
       <Songs addSong={addSong} />
-      <Playlist added={addedSongs} removeSongs={removeSongs} />
+      <Playlist
+        added={addedSongs}
+        removeSongs={removeSongs}
+        setAdded={setAddedSongs}
+      />
     </div>
   );
 }

@@ -8,7 +8,12 @@ function Songs(props) {
   return (
     <div className="box">
       <Search setSongs={setSongs} />
-      <Tracklist songs={songs} addSong={props.addSong} isPlus={true} />
+      <Tracklist
+        songs={songs}
+        addSong={props.addSong}
+        isPlus={true}
+        text="Songs will appear here once you search."
+      />
     </div>
   );
 }

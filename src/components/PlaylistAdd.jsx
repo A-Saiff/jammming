@@ -1,26 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "../css/PlaylistAdd.module.css";
-import { savePlaylist } from "../utilities/Spotify";
 
 function PlaylistAdd(props) {
-  const [name, setName] = useState("");
-
   function handleSubmit(e) {
     e.preventDefault();
-    savePlaylist(name ? name : "New Playlist", props.added).then((res) =>
-      setName("")
-    );
-    props.remove();
+    props.submit();
   }
 
   return (
     <div className={styles.addPlaylist}>
       <form className={styles.form} onSubmit={handleSubmit}>
         <input
-          value={name}
+          value={props.name}
           type="text"
           onChange={(e) => {
-            setName(e.target.value);
+            props.setName(e.target.value);
           }}
           placeholder="Enter the name of the playlist"
         />
