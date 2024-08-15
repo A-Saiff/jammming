@@ -19,7 +19,7 @@ const getAuthAccessToken = () => {
       window.history.pushState({}, null, window.location.pathname);
     } else {
       window.location =
-        "https://accounts.spotify.com/authorize?client_id=1e7ef874eb474e4498ffff2c49f57c07&response_type=token&redirect_uri=http://localhost:3000&scope=playlist-modify-public";
+        "https://accounts.spotify.com/authorize?client_id=1e7ef874eb474e4498ffff2c49f57c07&response_type=token&redirect_uri=https://jammwithspotify.netlify.app/&scope=playlist-modify-public";
     }
   }
 
