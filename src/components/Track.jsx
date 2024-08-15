@@ -35,7 +35,7 @@ function Track(props) {
         </div>
       ) : (
         <div className="iconDiv" onClick={removeClick}>
-          <img src="../../minus-svgrepo-com.svg" />
+          <img src="../../minus-svgrepo-com.svg" alt="remove" />
         </div>
       )}
     </div>

@@ -16,7 +16,7 @@ const h3Styles = {
 function Tracklist(props) {
   return (
     <div className={styles.tracklist}>
-      {props.songs.length == 0 && <h3 style={h3Styles}>{props.text}</h3>}
+      {props.songs.length === 0 && <h3 style={h3Styles}>{props.text}</h3>}
       {props.songs.map((song) => (
         <Track
           name={song.name}

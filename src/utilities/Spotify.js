@@ -85,6 +85,5 @@ export const savePlaylist = async (name, tracks) => {
       }),
     }
   );
-  let addedItem = await addedItemsResponse.json();
-  return "Created Playlist Successfully!";
+  await addedItemsResponse.json();
 };
